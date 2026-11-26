@@ -3,10 +3,12 @@
 * { box-sizing: border-box; }
 html, body { width: 100%; min-height: 100%; margin: 0; background: #000; }
 body { overflow: hidden; }
+.topbar { height: 76px; width: 100%; background: #000; }
+.topbar-menu { height: 100%; width: 100%; }
 .hero {
   position: relative;
   width: 100%;
-  min-height: 100svh;
+  min-height: calc(100svh - 76px);
   overflow: hidden;
   background: #000;
 }
