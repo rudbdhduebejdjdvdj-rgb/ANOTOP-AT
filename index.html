@@ -4,19 +4,38 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#000000">
-  <title>ANOTOP-AT</title>
+  <title>ANOTOP AT | Memecoin</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="home-page">
   <header class="topbar">
     <nav class="topbar-menu" aria-label="Menú principal">
-      <a href="index.html">Inicio</a>
+      <a href="index.html" aria-current="page">Inicio</a>
       <a href="memes.html">Memes</a>
     </nav>
   </header>
-  <main class="hero" aria-label="ANOTOP-AT">
-    <h1 class="hero-title">ANOTOP AT</h1>
-    <img class="hero-image" src="foto.jpg" alt="">
+  <main>
+    <section class="hero" aria-label="ANOTOP AT">
+      <h1 class="hero-title">ANOTOP AT</h1>
+      <img class="hero-image" src="foto.jpg" alt="">
+      <a class="hero-scroll" href="#coin-section">DESCUBRE ANOTOP <span>↓</span></a>
+    </section>
+
+    <section class="coin-section" id="coin-section">
+      <div class="coin-copy">
+        <p class="coin-eyebrow">EL MEME. LA MONEDA. LA COMUNIDAD.</p>
+        <h2>CONOCE<br>ANOTOP AT</h2>
+        <p>Una memecoin nacida de la cultura de internet. Únete a la comunidad y descubre el proyecto.</p>
+      </div>
+      <div class="coin-frame-wrap">
+        <div class="coin-frame">
+          <!-- Coloca tu imagen de la moneda en assets/coin.png -->
+          <img src="assets/coin.png" alt="Imagen de la moneda ANOTOP AT" onerror="this.style.display='none'">
+          <span class="coin-placeholder">TU MONEDA<br>AQUÍ</span>
+        </div>
+        <span class="coin-caption">ANOTOP AT TOKEN</span>
+      </div>
+    </section>
   </main>
 </body>
 </html>
