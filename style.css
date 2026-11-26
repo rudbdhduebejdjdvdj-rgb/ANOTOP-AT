@@ -295,3 +295,45 @@ body.buy-page { min-height:100vh; color:#f5f5f5; background:#050505; font-family
  .social-icons svg,.coin-social-placeholder svg{width:17px;height:17px}
  .netflix-page .brand{font-size:16px}
 }
+
+/* Catálogo ANOTOP estilo plataforma de streaming */
+.catalogue-section{padding:20px 4.5% 18px;background:#080808}
+.catalogue-heading{display:flex;align-items:baseline;justify-content:space-between;gap:15px;margin:0 0 13px}
+.catalogue-heading h2{margin:0;color:#f2f2f2;font:700 clamp(17px,2vw,23px) Arial,sans-serif}
+.catalogue-heading>span{color:#777;font:700 9px Arial,sans-serif;letter-spacing:.16em}
+.catalogue-row{position:relative}
+.poster-track{display:flex;gap:13px;overflow-x:auto;scroll-behavior:smooth;padding:5px 3px 20px;scrollbar-width:none}
+.poster-track::-webkit-scrollbar{display:none}
+.poster-card{position:relative;flex:0 0 clamp(145px,17vw,225px);height:clamp(205px,24vw,310px);display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;padding:17px 15px;border:1px solid #ffffff20;border-radius:3px;overflow:hidden;text-align:left;color:#fff;cursor:pointer;transition:transform .22s ease,filter .22s ease;box-shadow:0 8px 24px #0008}
+.poster-card::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0002 0%,transparent 35%,#000d 100%);pointer-events:none}
+.poster-card:hover{transform:scale(1.045);filter:brightness(1.15);z-index:2}
+.poster-card>*{position:relative;z-index:1}
+.poster-tag{font:700 8px Arial,sans-serif;letter-spacing:.16em;opacity:.8}
+.poster-card strong{font:900 clamp(22px,2.7vw,34px)/.9 Arial,sans-serif;letter-spacing:-.07em;text-shadow:0 2px 12px #0008}
+.poster-card small{font:700 8px Arial,sans-serif;letter-spacing:.13em}
+.poster-one{background:radial-gradient(ellipse at 65% 30%,#b98c5c,#391a17 52%,#090909)}
+.poster-two{background:radial-gradient(ellipse at 40% 30%,#c7a24f,#74410e 40%,#17100a)}
+.poster-three{background:radial-gradient(ellipse at 55% 30%,#d21c29,#650b16 50%,#090909)}
+.poster-four{background:radial-gradient(ellipse at 50% 35%,#78869a,#252e40 50%,#080a10)}
+.poster-five{background:radial-gradient(ellipse at 50% 30%,#7b1d28,#1a080c 60%,#030303)}
+.poster-six{background:radial-gradient(ellipse at 50% 30%,#287c79,#123b42 50%,#050909)}
+.mini-poster{height:clamp(135px,16vw,195px);flex-basis:clamp(170px,20vw,260px);padding:15px}
+.mini-poster strong{font-size:clamp(19px,2.2vw,27px)}
+.mini-one{background:linear-gradient(135deg,#8c111a,#19070a)}
+.mini-two{background:linear-gradient(135deg,#a67b38,#21180c)}
+.mini-three{background:linear-gradient(135deg,#303b77,#090b1d)}
+.mini-four{background:linear-gradient(135deg,#777,#171717)}
+.mini-five{background:linear-gradient(135deg,#b04b25,#24100a)}
+.mini-six{background:linear-gradient(135deg,#18665e,#061b1b)}
+.row-arrow{position:absolute;z-index:4;top:40%;width:36px;height:60px;border:0;background:#000b;color:white;font:300 42px/1 Arial,sans-serif;cursor:pointer;opacity:.8}
+.row-arrow:hover{background:#111;opacity:1}
+.row-prev{left:-4.5%}.row-next{right:-4.5%}
+.offline-overlay[hidden]{display:none}
+.offline-overlay{position:fixed;z-index:10000;inset:0;display:flex;align-items:center;justify-content:center;padding:22px;background:#000b;backdrop-filter:blur(5px)}
+.offline-box{width:min(430px,100%);padding:34px 30px 28px;background:#181818;border-top:4px solid #e50914;box-shadow:0 20px 70px #000b;color:#fff;text-align:center;font-family:Arial,sans-serif}
+.offline-symbol{display:inline-flex;width:42px;height:42px;align-items:center;justify-content:center;border:2px solid #e50914;border-radius:50%;color:#e50914;font-size:25px;font-weight:700}
+.offline-kicker{margin:18px 0 8px;color:#e50914;font-size:9px;font-weight:800;letter-spacing:.2em}
+.offline-box h2{margin:0 0 10px;font-size:23px;letter-spacing:-.04em}
+.offline-box p:not(.offline-kicker){margin:0 0 23px;color:#aaa;font-size:13px}
+.offline-box button{min-width:120px;padding:11px 20px;border:0;border-radius:3px;background:#e50914;color:#fff;font-weight:700;cursor:pointer}
+@media(max-width:700px){.catalogue-section{padding:18px 5%}.row-prev{left:-5%}.row-next{right:-5%}.poster-card{flex-basis:43vw;height:58vw;max-height:260px}.mini-poster{flex-basis:48vw;height:35vw}.row-arrow{width:28px;height:48px;font-size:34px}.offline-box{padding:30px 22px}}
