@@ -137,3 +137,38 @@ body.home-page { overflow-x: hidden; overflow-y: auto; background: #000; color: 
   .coin-frame-wrap { align-self: center; }
   .coin-frame { width: min(72vw, 300px); }
 }
+
+
+/* Página Cómo comprar */
+body.buy-page { min-height:100vh; color:#f5f5f5; background:#050505; font-family:'Space Grotesk',sans-serif; }
+.buy-page .topbar { display:flex; align-items:center; justify-content:space-between; padding:0 clamp(22px,6vw,90px); border-bottom:1px solid #ffffff18; }
+.buy-brand { color:#fff; font-size:17px; font-weight:700; letter-spacing:-.06em; text-decoration:none; }
+.buy-page .topbar-menu { width:auto; gap:clamp(14px,3vw,34px); padding:0; }
+.buy-page .topbar-menu a { font-size:13px; }
+.buy-main { width:min(1080px,88vw); margin:0 auto; }
+.buy-hero { padding:clamp(70px,11vw,130px) 0 70px; border-bottom:1px solid #ffffff20; }
+.buy-eyebrow { color:#999; font-size:10px; font-weight:700; letter-spacing:.23em; }
+.buy-hero h1 { margin:25px 0 20px; font-size:clamp(62px,11vw,126px); line-height:.82; letter-spacing:-.09em; }
+.buy-hero h1 span { color:#777; }
+.buy-intro { max-width:570px; color:#aaa; font-size:16px; line-height:1.75; }
+.buy-status { display:inline-flex; align-items:center; gap:10px; margin-top:22px; padding:11px 14px; border:1px solid #ffffff28; color:#ccc; font-size:10px; letter-spacing:.13em; }
+.buy-status span { width:7px; height:7px; border-radius:50%; background:#d7a84b; box-shadow:0 0 12px #d7a84b88; }
+.buy-steps { display:grid; grid-template-columns:1fr 1fr; gap:0 55px; padding:35px 0 65px; }
+.buy-step { display:flex; gap:22px; padding:30px 0; border-bottom:1px solid #ffffff20; }
+.buy-step > span { color:#777; font-size:13px; letter-spacing:.1em; }
+.buy-step h2 { margin:0 0 10px; font-size:20px; letter-spacing:-.04em; }
+.buy-step p { margin:0; color:#999; font-size:13px; line-height:1.7; }
+.buy-warning { padding:35px; border:1px solid #8a6b35; background:linear-gradient(120deg,#211a0e66,#080808); }
+.buy-warning h2 { max-width:700px; margin:15px 0; font-size:clamp(23px,4vw,38px); line-height:1.05; letter-spacing:-.055em; }
+.buy-warning > p:last-child { max-width:760px; color:#aaa; font-size:14px; line-height:1.7; }
+.buy-footer { display:flex; justify-content:space-between; gap:20px; padding:35px 0 45px; color:#777; font-size:10px; letter-spacing:.12em; }
+.buy-footer a { color:#ddd; text-decoration:none; }
+@media(max-width:700px) {
+ .buy-page .topbar { height:auto; min-height:68px; padding:12px 6vw; flex-wrap:wrap; gap:10px; }
+ .buy-page .topbar-menu { gap:14px; }
+ .buy-page .topbar-menu a { font-size:11px; }
+ .buy-brand { font-size:15px; }
+ .buy-steps { grid-template-columns:1fr; }
+ .buy-warning { padding:25px; }
+ .buy-footer { flex-direction:column; }
+}
