@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap');
+
 * { box-sizing: border-box; }
 html, body { width: 100%; min-height: 100%; margin: 0; background: #000; }
 body { overflow: hidden; }
@@ -11,16 +13,17 @@ body { overflow: hidden; }
 .hero-title {
   position: absolute;
   z-index: 2;
-  top: 50%;
-  left: clamp(28px, 8vw, 140px);
+  top: 48%;
+  left: clamp(24px, 5.5vw, 92px);
+  width: 42vw;
   transform: translateY(-50%);
   margin: 0;
   color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: clamp(2.8rem, 7vw, 7rem);
-  font-weight: 800;
-  letter-spacing: -0.06em;
-  line-height: 0.95;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(3rem, 6.2vw, 6.2rem);
+  font-weight: 700;
+  letter-spacing: -0.075em;
+  line-height: 0.92;
 }
 .hero-image {
   position: absolute;
@@ -36,9 +39,10 @@ body { overflow: hidden; }
 }
 @media (max-width: 700px) {
   .hero-title {
-    top: 18%;
+    top: 16%;
     left: 7vw;
-    font-size: clamp(2.6rem, 12vw, 5rem);
+    width: 86vw;
+    font-size: clamp(2.7rem, 11vw, 4.8rem);
     transform: none;
   }
   .hero-image {
