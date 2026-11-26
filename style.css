@@ -9,43 +9,49 @@ body { overflow: hidden; }
 .hero { position: relative; width: 100%; min-height: calc(100svh - 76px); overflow: hidden; background: #000; }
 .hero-title { position: absolute; z-index: 2; top: 48%; left: clamp(24px, 5.5vw, 92px); width: 42vw; transform: translateY(-50%); margin: 0; color: #fff; font-family: 'Space Grotesk', sans-serif; font-size: clamp(3rem, 6.2vw, 6.2rem); font-weight: 700; letter-spacing: -.075em; line-height: .92; }
 .hero-image { position: absolute; top: 50%; right: 0; height: 100%; width: min(76vw, 1200px); object-fit: cover; object-position: center; transform: translateY(-50%); -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.12) 8%, #000 35%); mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.12) 8%, #000 35%); }
-body.catalog-page { overflow-x: hidden; overflow-y: auto; color: #fff; font-family: 'Space Grotesk', sans-serif; background: #080808; }
-.catalog { min-height: calc(100svh - 76px); padding: 46px clamp(22px, 5vw, 76px) 80px; background: radial-gradient(ellipse at 80% 0%, #202020 0%, #0b0b0b 38%, #080808 75%); }
-.catalog-feature { padding: 16px 0 42px; max-width: 680px; }
-.catalog-kicker, .poster-tag { color: #aaa; font-size: 11px; font-weight: 700; letter-spacing: .2em; }
-.catalog-feature h1 { margin: 12px 0; font-size: clamp(38px, 6vw, 70px); line-height: .98; letter-spacing: -.06em; }
-.catalog-feature p:last-child { max-width: 480px; color: #bcbcbc; font-size: 15px; line-height: 1.6; }
-.shelf { margin-top: 24px; }
-.shelf h2 { margin: 0 0 17px; color: #f5f5f5; font-size: 21px; letter-spacing: -.03em; }
-.poster-row { display: flex; gap: 18px; overflow-x: auto; padding: 2px 2px 18px; }
-.poster { position: relative; flex: 0 0 190px; height: 260px; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; padding: 17px; border: 1px solid #ffffff20; border-radius: 5px; color: #fff; text-decoration: none; box-shadow: 0 12px 30px #0008; transition: transform .2s ease, border-color .2s ease; }
-.poster:hover { transform: scale(1.035); border-color: #ffffff88; }
-.poster strong { font-size: 27px; line-height: .92; letter-spacing: -.07em; }
-.poster-tag { font-size: 9px; }
-.poster-bottom { font-size: 9px; font-weight: 700; letter-spacing: .12em; }
-.poster-anotop { flex-basis: 220px; background: radial-gradient(circle at 75% 22%, #595959, transparent 30%), linear-gradient(145deg, #252525, #050505 68%); border: 1px solid #777; }
-.poster-anotop strong { font-size: 39px; }
-.poster-chaos { background: linear-gradient(145deg, #522b16, #d45b20 45%, #120b09); }
-.poster-frog { background: radial-gradient(circle at 50% 35%, #a8d63a, transparent 25%), linear-gradient(150deg, #183d20, #07130b); }
-.poster-monday { background: linear-gradient(145deg, #34445a, #10151e 65%, #050608); }
-.poster-space { background: radial-gradient(circle at 65% 30%, #6c39a1, transparent 28%), linear-gradient(145deg, #101a38, #05050b); }
-.detail-page { min-height: calc(100svh - 76px); padding: 28px clamp(22px, 5vw, 76px) 80px; background: radial-gradient(ellipse at 60% 0%, #252525, #080808 70%); }
-.back-link { color: #ddd; text-decoration: none; font-size: 14px; }
-.back-link:hover { color: #fff; }
-.detail-art { position: relative; min-height: 390px; margin-top: 24px; padding: 34px; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; border: 1px solid #ffffff24; border-radius: 8px; background: radial-gradient(circle at 76% 28%, #777 0, #333 12%, transparent 35%), linear-gradient(110deg, #222, #080808 70%); }
-.detail-art h1 { margin: 20px 0 4px; font-size: clamp(54px, 10vw, 112px); line-height: .85; letter-spacing: -.09em; }
-.detail-art p { color: #ccc; }
-.detail-mark { position: absolute; right: 8%; top: 10%; color: #ffffff18; font-size: clamp(90px, 20vw, 230px); font-weight: 700; letter-spacing: -.12em; }
-.detail-info { max-width: 620px; padding-top: 28px; }
-.detail-info h2 { margin: 8px 0; font-size: 30px; }
-.detail-info p:last-child { color: #aaa; line-height: 1.6; }
+
+/* Catálogo estilo plataforma de streaming */
+body.netflix-page { overflow-x: hidden; overflow-y: auto; color: #fff; background: #080808; font-family: Arial, Helvetica, sans-serif; }
+.netflix-page .topbar { position: absolute; z-index: 10; top: 0; left: 0; display: flex; align-items: center; justify-content: space-between; padding: 0 5vw; background: linear-gradient(#050505dd, transparent); }
+.brand { color: #e50914; font-size: 23px; font-weight: 900; letter-spacing: -.08em; text-decoration: none; }
+.brand span { color: #fff; font-size: 12px; letter-spacing: .08em; }
+.netflix-page .topbar-menu { width: auto; gap: 28px; padding: 0; }
+.netflix-page .topbar-menu a { font-size: 13px; }
+.streaming-home { min-height: 100vh; padding-bottom: 55px; background: #080808; }
+.featured { position: relative; min-height: 440px; height: min(62vw, 570px); max-height: 610px; overflow: hidden; background: radial-gradient(ellipse at 76% 35%, #29303c, transparent 44%), linear-gradient(90deg,#000 20%,#171717 100%); }
+.featured-image { position: absolute; inset: 0 0 0 auto; width: 70%; height: 100%; object-fit: cover; object-position: center 35%; }
+.featured-shade { position: absolute; inset: 0; background: linear-gradient(90deg,#000 0%,#000 28%,#000c 45%,transparent 78%), linear-gradient(0deg,#080808 0%,transparent 30%); }
+.featured-copy { position: absolute; z-index: 2; top: 50%; left: 7.2%; width: min(42%, 490px); transform: translateY(-43%); }
+.original-label { margin: 0 0 20px; color: #aaa; font-size: 10px; letter-spacing: .12em; }
+.featured-copy h1 { margin: 0 0 14px; color: #fff; font-family: Georgia,serif; font-size: clamp(35px,5vw,67px); font-weight: 500; line-height: .95; letter-spacing: -.06em; }
+.featured-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 13px; color: #ccc; font-size: 12px; }
+.stars { color: #e50914; letter-spacing: 1px; }
+.quality { padding: 3px 5px; border: 1px solid #888; border-radius: 2px; color: #bbb; font-size: 9px; }
+.featured-description { max-width: 390px; margin: 18px 0; color: #eee; font-size: 14px; line-height: 1.5; }
+.play-link { display: inline-flex; align-items: center; gap: 9px; padding: 10px 17px; border-radius: 3px; background: #fff; color: #111; font-size: 13px; font-weight: 700; text-decoration: none; }
+.stream-row { position: relative; z-index: 3; margin: -5px 0 23px; padding: 0 0 0 4.5%; }
+.stream-row h2 { margin: 0 0 10px; color: #e5e5e5; font-size: 17px; font-weight: 600; }
+.thumbs { display: flex; gap: 9px; overflow-x: auto; padding: 3px 4.5% 13px 0; scrollbar-width: thin; scrollbar-color: #555 #111; }
+.thumb { position: relative; flex: 0 0 17%; min-width: 145px; aspect-ratio: 16 / 9; overflow: hidden; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg,#242424,#090909); border: 1px solid #ffffff12; color: #888; text-decoration: none; }
+.thumb img { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; object-fit: cover; }
+.image-placeholder { position: absolute; z-index: 0; font-size: 12px; font-weight: 700; letter-spacing: .12em; color: #777; }
+.thumb-featured { outline: 2px solid #ddd; outline-offset: -2px; }
+.thumb-featured .image-placeholder { color: #fff; font-family: Georgia,serif; font-size: 20px; text-align: center; }
 @media (max-width: 700px) {
   .topbar-menu { gap: 24px; padding: 0 7vw; }
   .hero-title { top: 16%; left: 7vw; width: 86vw; font-size: clamp(2.7rem, 11vw, 4.8rem); transform: none; }
   .hero-image { width: 100%; height: 78svh; top: auto; bottom: 0; transform: none; -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 38%); mask-image: linear-gradient(to right, transparent 0%, #000 38%); }
-  .catalog { padding-top: 30px; }
-  .catalog-feature { padding-bottom: 24px; }
-  .poster { flex-basis: 155px; height: 220px; }
-  .poster-anotop { flex-basis: 180px; }
-  .detail-art { min-height: 300px; padding: 22px; }
+  .netflix-page .topbar { height: 62px; padding: 0 5vw; }
+  .brand { font-size: 19px; }
+  .netflix-page .topbar-menu { gap: 16px; }
+  .netflix-page .topbar-menu a { font-size: 12px; }
+  .featured { min-height: 460px; height: 78vh; max-height: 620px; }
+  .featured-image { width: 100%; height: 65%; top: 0; object-position: center; }
+  .featured-shade { background: linear-gradient(0deg,#080808 12%,#080808dd 30%,transparent 75%), linear-gradient(90deg,#0005,transparent); }
+  .featured-copy { top: auto; bottom: 55px; left: 6%; width: 88%; transform: none; }
+  .featured-copy h1 { font-size: 42px; }
+  .featured-description { max-width: 340px; font-size: 13px; }
+  .stream-row { padding-left: 5%; }
+  .stream-row h2 { font-size: 15px; }
+  .thumb { flex-basis: 42%; min-width: 145px; }
 }
