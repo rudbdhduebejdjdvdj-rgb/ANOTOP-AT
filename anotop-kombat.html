@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090909">
+<title>ANOTOP KOMBAT | Congreso Edition</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@400;600;700&display=swap');
+*{box-sizing:border-box}body{margin:0;background:#080808;color:#fff;font-family:'Space Grotesk',sans-serif}
+header{height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;border-bottom:1px solid #292929}
+.logo{font-weight:900;letter-spacing:-.06em;color:#fff;text-decoration:none}.nav{display:flex;gap:22px}.nav a{color:#ddd;text-decoration:none;font-size:13px}
+main{width:min(1120px,94vw);margin:28px auto 60px}.intro{text-align:center;margin:30px 0 22px}.eyebrow{font:10px 'Press Start 2P';color:#f2c14e;line-height:1.8}.intro h1{font:clamp(24px,5vw,48px) 'Press Start 2P';line-height:1.45;margin:15px 0}.intro p{color:#aaa;margin:0;font-size:14px}
+.game-shell{border:3px solid #555;background:#101010;box-shadow:0 0 0 5px #1d1d1d,0 20px 70px #000; padding:10px}
+.hud{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center;padding:8px 6px 12px}
+.name{font:10px 'Press Start 2P';font-size:clamp(7px,1.1vw,10px);margin-bottom:8px}.health{height:17px;background:#381717;border:2px solid #ddd;transform:skewX(-12deg);overflow:hidden}.health>i{display:block;height:100%;width:100%;background:linear-gradient(90deg,#7fd45a,#d8ed55);transition:width .15s}
+.player-hud:last-child{text-align:right}.player-hud:last-child .health{transform:skewX(12deg)}.player-hud:last-child .health>i{margin-left:auto;background:linear-gradient(90deg,#edc34c,#e35b42)}
+.round{font:8px 'Press Start 2P';color:#f2c14e;white-space:nowrap}
+canvas{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#111;image-rendering:pixelated;image-rendering:crisp-edges;border:2px solid #444}
+.controls{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:12px 4px 2px;flex-wrap:wrap}.hint{font-size:11px;color:#aaa;line-height:1.8}.buttons{display:flex;gap:7px;flex-wrap:wrap}.buttons button,.restart{border:2px solid #777;background:#242424;color:#fff;padding:10px 13px;font:9px 'Press Start 2P';cursor:pointer;box-shadow:0 3px #555}.buttons button:active,.restart:active{transform:translateY(2px);box-shadow:0 1px #555}
+.actions{display:flex;gap:8px;justify-content:center;margin:18px 0}.restart{background:#9c2020;border-color:#d76b55}.message{text-align:center;color:#f2c14e;min-height:24px;font:10px 'Press Start 2P';line-height:1.8}
+.disclaimer{text-align:center;color:#777;font-size:11px;margin:22px auto;max-width:780px;line-height:1.7}
+.mobile-controls{display:none;justify-content:space-between;gap:12px;margin-top:12px}.mobile-controls div{display:flex;gap:7px}.mobile-controls button{width:48px;height:46px;border:2px solid #777;background:#252525;color:white;font:12px 'Press Start 2P';touch-action:none}
+@media(max-width:650px){header{padding:0 4vw}.nav{gap:10px}.nav a{font-size:11px}main{margin-top:14px}.game-shell{padding:6px}.mobile-controls{display:flex}.hint{width:100%;text-align:center}.round{font-size:7px}}
+</style>
+</head>
+<body>
+<header><a class="logo" href="index.html">ANOTOP AT</a><nav class="nav"><a href="index.html">Inicio</a><a href="memes.html">Memes</a><a href="como-comprar.html">Cómo comprar</a></nav></header>
+<main>
+<section class="intro"><div class="eyebrow">PRESENTA</div><h1>ANOTOP KOMBAT</h1><p>CONGRESO EDITION · ¡EL DEBATE SE RESUELVE EN EL PIXEL-RING!</p></section>
+<section class="game-shell">
+<div class="hud">
+ <div class="player-hud"><div class="name">ANOTOP AT</div><div class="health"><i id="hp1"></i></div></div>
+ <div class="round" id="round">ROUND 1</div>
+ <div class="player-hud"><div class="name">EL PORTAVOZ</div><div class="health"><i id="hp2"></i></div></div>
+</div>
+<canvas id="game" width="960" height="540" aria-label="Juego de lucha pixel art en el Congreso"></canvas>
+<div class="controls"><div class="hint">MOVER: A / D · SALTAR: W · PUÑO: J · PATADA: K · ESPECIAL: L</div><div class="buttons"><button data-key="j">PUÑO</button><button data-key="k">PATADA</button><button data-key="l">ESPECIAL</button></div></div>
+<div class="mobile-controls"><div><button data-key="a">◀</button><button data-key="d">▶</button><button data-key="w">▲</button></div><div><button data-key="j">J</button><button data-key="k">K</button><button data-key="l">L</button></div></div>
+</section>
+<div class="actions"><button class="restart" id="restart">REINICIAR COMBATE</button></div><div class="message" id="message">¡QUE EMPIECE EL DEBATE!</div>
+<p class="disclaimer">Juego de parodia y ficción inspirado en los juegos clásicos de lucha. Personajes inventados; no representa un combate real ni está afiliado al Congreso de los Diputados.</p>
+</main>
+<script>
+(()=>{
+const c=document.getElementById('game'),ctx=c.getContext('2d'),W=960,H=540;
+ctx.imageSmoothingEnabled=false;
+const keys={};let last=0,ended=false,flash=0,shake=0;
+const p={x:245,y:405,vx:0,vy:0,hp:100,face:1,attack:0,cool:0,stun:0,frame:0};
+const e={x:715,y:405,vx:0,vy:0,hp:100,face:-1,attack:0,cool:0,stun:0,frame:0};
+const hp1=document.getElementById('hp1'),hp2=document.getElementById('hp2'),msg=document.getElementById('message'),round=document.getElementById('round');
+function rect(x,y,w,h,col){ctx.fillStyle=col;ctx.fillRect(Math.round(x),Math.round(y),w,h)}
+function text(t,x,y,size,col='#fff'){ctx.fillStyle=col;ctx.font=size+'px monospace';ctx.textAlign='center';ctx.fillText(t,x,y)}
+function drawStage(){
+ const g=ctx.createLinearGradient(0,0,0,H);g.addColorStop(0,'#171c2a');g.addColorStop(1,'#33221e');ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+ // Congreso chamber
+ rect(0,0,W,65,'#10131b');for(let i=0;i<12;i++){rect(i*82+10,15,54,43,'#34313a');rect(i*82+15,20,44,33,'#55505a');rect(i*82+20,25,34,23,'#252936')}
+ rect(0,65,W,12,'#80633b');rect(0,77,W,4,'#d1a65b');
+ // audience gallery
+ for(let r=0;r<3;r++)for(let i=0;i<20;i++){rect(i*49+8,100+r*38,37,18,'#292c35');rect(i*49+12,104+r*38,29,8,(i+r)%3?'#4c4a50':'#72513e')}
+ // speaker podium + Spanish flag colors, no official emblem
+ rect(390,220,180,85,'#67462c');rect(405,235,150,60,'#8c6239');rect(425,245,110,42,'#20242b');rect(440,250,80,5,'#d9b16c');
+ rect(472,140,16,55,'#8c6239');rect(450,140,60,35,'#b83a30');rect(450,151,60,10,'#e7bd45');
+ // floor
+ rect(0,420,W,120,'#272329');for(let i=0;i<16;i++)rect(i*64,420,2,120,'#39333a');rect(0,420,W,8,'#8c6942');
+ // benches
+ for(let i=0;i<8;i++){rect(40+i*115,365,85,15,'#68462f');rect(48+i*115,380,70,8,'#9b7045')}
+ // pixel lights
+ for(let i=0;i<18;i++)rect(i*57+8,90,3,3,'#d6b96c');
+}
+function fighter(f,kind){
+ const x=Math.round(f.x),y=Math.round(f.y),dir=f.face;
+ ctx.save();ctx.translate(x,y);ctx.scale(dir,1);
+ const coat=kind==='p'?'#244d8d':'#8e2828',skin=kind==='p'?'#d99b70':'#d9a078';
+ // shadow
+ rect(-24,8,48,7,'#171416');
+ // legs
+ rect(-17,-28,13,28,'#252b36');rect(5,-28,13,28,'#252b36');rect(-21,-4,19,7,'#171717');rect(4,-4,20,7,'#171717');
+ // body suit
+ rect(-22,-80,44,55,coat);rect(-27,-76,8,39,skin);rect(19,-76,8,39,skin);
+ // tie
+ rect(-4,-78,8,27,'#e5c24e');rect(-3,-48,6,5,'#f4e0a0');
+ // head, hair
+ rect(-17,-112,34,32,skin);rect(-20,-119,40,12,kind==='p'?'#27201d':'#171717');rect(-15,-101,6,4,'#171717');rect(8,-101,6,4,'#171717');rect(-6,-88,13,3,'#6c2727');
+ // pixel ear
+ rect(16,-102,5,9,skin);
+ // fists/attack
+ if(f.attack>0){let reach=f.attack>10?43:32;rect(18,-74,reach,12,'#d99b70');rect(18+reach-4,-77,12,17,'#f0b58b')}else{rect(17,-67,15,13,skin)}
+ // belt
+ rect(-22,-31,44,5,'#d2b15e');
+ if(kind==='p'){rect(-18,-116,36,4,'#e9d7b8')}else{rect(-17,-116,34,4,'#202020')}
+ ctx.restore();
+}
+function draw(){
+ drawStage();fighter(p,'p');fighter(e,'e');
+ if(flash>0){rect(0,0,W,H,'#fff');flash--}
+ if(shake>0)shake--;
+ text('HEMICICLO ARENA',W/2,35,13,'#e7c77d');
+}
+function attack(f,target,type){
+ if(f.cool>0||f.stun>0||ended)return;
+ f.attack=type==='l'?20:13;f.cool=type==='l'?65:28;
+ const dist=Math.abs(f.x-target.x),reach=type==='l'?150:90;
+ if(dist<reach&&Math.abs(f.y-target.y)<55&&Math.sign(target.x-f.x)===f.face){
+  let dmg=type==='j'?7:type==='k'?11:19;target.hp=Math.max(0,target.hp-dmg);target.stun=type==='l'?18:9;target.vx=f.face*(type==='l'?8:4);flash=type==='l'?3:0;shake=type==='l'?8:3;
+  msg.textContent=type==='l'?'¡MOCIÓN DE IMPACTO!':type==='k'?'¡PATADA VOLADORA!':'¡GOLPE AL ATRIL!';
+ }
+}
+function update(dt){
+ if(ended)return;
+ const s=Math.min(dt/16.67,2);
+ [p,e].forEach(f=>{f.cool=Math.max(0,f.cool-s);f.attack=Math.max(0,f.attack-s);f.stun=Math.max(0,f.stun-s);f.vy+=.72*s;f.y+=f.vy*s;if(f.y>405){f.y=405;f.vy=0}f.x+=f.vx*s;f.vx*=Math.pow(.82,s);f.x=Math.max(35,Math.min(W-35,f.x))});
+ p.face=e.x>p.x?1:-1;e.face=p.x>e.x?1:-1;
+ if(!p.stun){p.vx=0;if(keys.a)p.vx=-4.1;if(keys.d)p.vx=4.1;if(keys.w&&p.y>=405)p.vy=-13;if(keys.j)attack(p,e,'j');if(keys.k)attack(p,e,'k');if(keys.l)attack(p,e,'l')}
+ // simple rival AI
+ if(!e.stun&&e.cool<=0){let d=p.x-e.x;if(Math.abs(d)>85)e.vx=Math.sign(d)*2.15;else if(Math.random()<.055)attack(e,p,Math.random()<.6?'j':'k');if(e.y>=405&&Math.random()<.004)e.vy=-10}
+ hp1.style.width=p.hp+'%';hp2.style.width=e.hp+'%';
+ if(p.hp<=0||e.hp<=0){ended=true;round.textContent='FIN';msg.textContent=p.hp>0?'¡ANOTOP AT GANA EL DEBATE!':'EL PORTAVOZ SE LLEVA LA VOTACIÓN';}
+}
+function loop(t){let dt=t-last||16;last=t;update(dt);draw();requestAnimationFrame(loop)}
+function setKey(k,on){keys[k]=on}
+window.addEventListener('keydown',ev=>{let k=ev.key.toLowerCase();if(['a','d','w','j','k','l',' '].includes(k)){ev.preventDefault();setKey(k,true)}});
+window.addEventListener('keyup',ev=>setKey(ev.key.toLowerCase(),false));
+document.querySelectorAll('[data-key]').forEach(b=>{let k=b.dataset.key;b.addEventListener('pointerdown',ev=>{ev.preventDefault();setKey(k,true)});['pointerup','pointerleave','pointercancel'].forEach(n=>b.addEventListener(n,()=>setKey(k,false)))});
+function reset(){Object.assign(p,{x:245,y:405,vx:0,vy:0,hp:100,face:1,attack:0,cool:0,stun:0});Object.assign(e,{x:715,y:405,vx:0,vy:0,hp:100,face:-1,attack:0,cool:0,stun:0});ended=false;round.textContent='ROUND 1';msg.textContent='¡QUE EMPIECE EL DEBATE!';hp1.style.width=hp2.style.width='100%'}
+document.getElementById('restart').addEventListener('click',reset);requestAnimationFrame(loop);
+})();
+</script>
+</body></html>
