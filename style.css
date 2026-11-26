@@ -227,3 +227,11 @@ body.buy-page { min-height:100vh; color:#f5f5f5; background:#050505; font-family
  .social-icons svg,.coin-social-placeholder svg{width:18px;height:18px}
  .topbar-menu a{font-size:12px}
 }
+
+/* Navegación alineada a la izquierda y con más aire */
+.topbar .topbar-menu{justify-content:flex-start;gap:clamp(34px,5vw,76px);padding-left:0}
+.social-icons{margin-left:clamp(42px,7vw,110px);gap:clamp(20px,3vw,38px)}
+@media(max-width:700px){
+ .topbar .topbar-menu{justify-content:flex-start;gap:clamp(16px,4vw,28px);padding-left:0}
+ .social-icons{margin-left:clamp(18px,5vw,32px);gap:14px}
+}
