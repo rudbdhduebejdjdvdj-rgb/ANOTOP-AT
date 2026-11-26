@@ -337,3 +337,7 @@ body.buy-page { min-height:100vh; color:#f5f5f5; background:#050505; font-family
 .offline-box p:not(.offline-kicker){margin:0 0 23px;color:#aaa;font-size:13px}
 .offline-box button{min-width:120px;padding:11px 20px;border:0;border-radius:3px;background:#e50914;color:#fff;font-weight:700;cursor:pointer}
 @media(max-width:700px){.catalogue-section{padding:18px 5%}.row-prev{left:-5%}.row-next{right:-5%}.poster-card{flex-basis:43vw;height:58vw;max-height:260px}.mini-poster{flex-basis:48vw;height:35vw}.row-arrow{width:28px;height:48px;font-size:34px}.offline-box{padding:30px 22px}}
+
+/* FIX: mostrar solo la imagen real de la moneda; ocultar el emblema provisional */
+.coin-frame .coin-emblem-fallback{display:none!important}
+.coin-frame .coin-image{display:block!important;z-index:2;width:100%;height:100%;object-fit:contain;border-radius:50%}
