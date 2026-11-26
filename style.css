@@ -182,3 +182,54 @@ body.buy-page { min-height:100vh; color:#f5f5f5; background:#050505; font-family
 .anotop-manifesto a span { padding-left:5px; font-size:14px; }
 .anotop-manifesto a:hover { color:#fff; }
 @media(max-width:700px) { .anotop-manifesto { margin-top:24px; max-width:100%; } }
+
+
+/* Secciones finales del universo ANOTOP */
+.home-universe,.home-faq{padding:100px clamp(24px,9vw,140px);border-top:1px solid #ffffff18;background:#080808}
+.section-kicker{color:#d2ad62;font:700 10px 'Space Grotesk',sans-serif;letter-spacing:.22em}
+.home-universe h2,.home-faq h2{margin:22px 0;font:700 clamp(44px,7vw,88px)/.9 'Space Grotesk',sans-serif;letter-spacing:-.08em}
+.home-universe>p{max-width:560px;color:#aaa;font:15px/1.8 'Space Grotesk',sans-serif}
+.universe-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:42px}
+.universe-card{min-height:235px;padding:23px;display:flex;flex-direction:column;justify-content:space-between;text-decoration:none;transition:transform .2s ease}
+.universe-card:hover{transform:translateY(-5px)}
+.universe-card span,.universe-card i{font:700 9px 'Space Grotesk',sans-serif;letter-spacing:.16em;font-style:normal}
+.universe-card strong{font:700 clamp(22px,3vw,38px)/.95 'Space Grotesk',sans-serif;letter-spacing:-.06em}
+.universe-card-red{background:#b20d18;color:#fff}.universe-card-gold{background:#d2ad62;color:#080808}.universe-card-light{background:#e7e4dc;color:#111}
+.home-faq{background:#030303}
+.home-faq details{max-width:760px;padding:22px 0;border-bottom:1px solid #ffffff25;color:#fff}
+.home-faq summary{cursor:pointer;font:600 16px 'Space Grotesk',sans-serif;list-style:none}
+.home-faq summary:after{content:'+';float:right;color:#d2ad62;font-size:22px}
+.home-faq details[open] summary:after{content:'−'}
+.home-faq details p{max-width:650px;color:#999;font:14px/1.7 'Space Grotesk',sans-serif}
+.site-footer{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:30px clamp(24px,9vw,140px);background:#000;color:#777;font:9px 'Space Grotesk',sans-serif;letter-spacing:.12em}
+.site-footer a{color:#ddd;text-decoration:none}
+.meme-tile{min-width:190px;aspect-ratio:4/3}
+.meme-tile .image-placeholder{position:relative;color:#fff;text-align:center;font:700 19px/1.1 'Space Grotesk',sans-serif;letter-spacing:-.04em}
+.tile-red{background:linear-gradient(135deg,#e50914,#4b0509)}.tile-gold{background:linear-gradient(135deg,#e3c47f,#74521c)}.tile-silver{background:linear-gradient(135deg,#aaa,#333)}.tile-dark{background:linear-gradient(135deg,#272727,#050505)}
+.meme-callout{margin:35px 4.5% 80px;padding:55px;background:linear-gradient(110deg,#171717,#080808);border:1px solid #ffffff18}
+.meme-callout h2{margin:10px 0 25px;font:700 clamp(35px,6vw,68px)/.9 'Space Grotesk',sans-serif;letter-spacing:-.07em}
+@media(max-width:700px){.universe-grid{grid-template-columns:1fr}.universe-card{min-height:180px}.home-universe,.home-faq{padding:70px 8vw}.site-footer{flex-direction:column;align-items:flex-start}.meme-callout{padding:30px 24px;margin-left:5%;margin-right:5%}}
+
+/* ANOTOP Meme Studio */
+body.studio-page{min-height:100vh;background:#050505;color:#fff;font-family:'Space Grotesk',sans-serif}
+.studio-page .topbar{display:flex;align-items:center;justify-content:space-between;padding:0 clamp(22px,6vw,90px);border-bottom:1px solid #ffffff18}
+.studio-page .topbar-menu{width:auto;gap:clamp(12px,2.5vw,30px);padding:0}
+.studio-page .topbar-menu a{font-size:12px}
+.studio-main{width:min(1160px,88vw);margin:auto}
+.studio-heading{padding:75px 0 45px;border-bottom:1px solid #ffffff20}
+.studio-heading h1{margin:20px 0;font:700 clamp(65px,11vw,120px)/.8 'Space Grotesk',sans-serif;letter-spacing:-.09em}
+.studio-heading h1 span{color:#d2ad62}
+.studio-heading>p:last-child{max-width:580px;color:#aaa;font-size:14px;line-height:1.8}
+.studio-layout{display:grid;grid-template-columns:320px 1fr;gap:45px;padding:45px 0 80px}
+.studio-controls{display:flex;flex-direction:column;gap:12px}
+.studio-controls label:not(.upload-control){margin-top:10px;color:#aaa;font-size:9px;font-weight:700;letter-spacing:.16em}
+.studio-controls input[type=text],.studio-controls select{width:100%;padding:13px;background:#151515;border:1px solid #333;color:#fff;font:13px 'Space Grotesk',sans-serif}
+.studio-controls input[type=file]{display:none}
+.upload-control,.studio-controls button{display:block;padding:15px;border:1px solid #d2ad62;background:#d2ad62;color:#080808;text-align:center;font:700 11px 'Space Grotesk',sans-serif;letter-spacing:.1em;cursor:pointer}
+.studio-controls button{margin-top:15px}
+.studio-note{color:#777;font-size:11px;line-height:1.6}
+.studio-preview{min-width:0}
+.preview-label{margin-bottom:12px;color:#888;font-size:9px;letter-spacing:.18em}
+.studio-preview canvas{display:block;width:100%;max-width:720px;aspect-ratio:1;background:#171717;border:1px solid #ffffff20}
+.studio-preview p{color:#888;font-size:11px}
+@media(max-width:760px){.studio-page .topbar{height:auto;min-height:70px;flex-wrap:wrap;gap:10px;padding:12px 6vw}.studio-page .topbar-menu{gap:12px}.studio-page .topbar-menu a{font-size:10px}.studio-layout{grid-template-columns:1fr;gap:30px}.studio-main{width:88vw}.studio-heading{padding-top:55px}}
