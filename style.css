@@ -4,7 +4,24 @@
 html, body { width: 100%; min-height: 100%; margin: 0; background: #000; }
 body { overflow: hidden; }
 .topbar { height: 76px; width: 100%; background: #000; }
-.topbar-menu { height: 100%; width: 100%; }
+.topbar-menu {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 36px;
+  padding: 0 clamp(24px, 5.5vw, 92px);
+}
+.topbar-menu a {
+  color: #fff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity .2s ease;
+}
+.topbar-menu a:hover { opacity: .65; }
 .hero {
   position: relative;
   width: 100%;
@@ -39,7 +56,10 @@ body { overflow: hidden; }
   -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.12) 8%, #000 35%);
   mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.12) 8%, #000 35%);
 }
+body.page-empty { overflow: hidden; }
+.page-empty main { min-height: calc(100svh - 76px); background: #000; }
 @media (max-width: 700px) {
+  .topbar-menu { gap: 24px; padding: 0 7vw; }
   .hero-title {
     top: 16%;
     left: 7vw;
