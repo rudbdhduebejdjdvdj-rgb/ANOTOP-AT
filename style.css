@@ -172,3 +172,13 @@ body.buy-page { min-height:100vh; color:#f5f5f5; background:#050505; font-family
  .buy-warning { padding:25px; }
  .buy-footer { flex-direction:column; }
 }
+
+/* Manifiesto ANOTOP AT bajo la presentación */
+.anotop-manifesto { margin-top:30px; padding:18px 20px 17px; max-width:390px; border-left:2px solid #d2ad62; background:linear-gradient(90deg,#d2ad6214,transparent); }
+.manifesto-mark { color:#d2ad62; font:700 34px Georgia,serif; line-height:.8; }
+.anotop-manifesto p { margin:8px 0 17px; color:#aaa; font:600 13px/1.7 'Space Grotesk',sans-serif; letter-spacing:.08em; }
+.anotop-manifesto p strong { color:#fff; }
+.anotop-manifesto a { color:#d2ad62; font:700 9px 'Space Grotesk',sans-serif; letter-spacing:.14em; text-decoration:none; }
+.anotop-manifesto a span { padding-left:5px; font-size:14px; }
+.anotop-manifesto a:hover { color:#fff; }
+@media(max-width:700px) { .anotop-manifesto { margin-top:24px; max-width:100%; } }
