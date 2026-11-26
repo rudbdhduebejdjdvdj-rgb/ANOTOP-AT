@@ -46,9 +46,16 @@
       </div>
       <div class="coin-frame-wrap">
         <div class="coin-frame">
-          <!-- Coloca tu imagen de la moneda en assets/coin.png -->
-          <img src="assets/anotop-hero.webp" alt="Imagen de la moneda ANOTOP AT" onerror="this.style.display='none'">
-          <span class="coin-placeholder">TU MONEDA<br>AQUÍ</span>
+          <div class="coin-emblem" role="img" aria-label="Logotipo de la moneda ANOTOP AT">
+            <svg viewBox="0 0 240 240" aria-hidden="true">
+              <defs><linearGradient id="coinGold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff0b8"/><stop offset=".45" stop-color="#d2ad62"/><stop offset="1" stop-color="#805b24"/></linearGradient></defs>
+              <circle cx="120" cy="120" r="111" fill="#090909" stroke="url(#coinGold)" stroke-width="8"/>
+              <circle cx="120" cy="120" r="96" fill="none" stroke="#d2ad62" stroke-width="2"/>
+              <circle cx="120" cy="120" r="78" fill="#17130c" stroke="#8c6b35" stroke-width="1.5"/>
+              <path d="M120 52 137 91 179 95 148 124 157 166 120 145 83 166 92 124 61 95 103 91Z" fill="url(#coinGold)" opacity=".9"/>
+              <text x="120" y="194" text-anchor="middle" fill="#f1d99b" font-family="Arial,sans-serif" font-size="17" font-weight="900" letter-spacing="3">ANOTOP AT</text>
+            </svg>
+          </div>
         </div>
         <span class="coin-caption">ANOTOP AT TOKEN</span>
       </div>
