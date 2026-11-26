@@ -14,7 +14,7 @@ body { overflow: hidden; }
   padding: 0 clamp(24px, 5.5vw, 92px);
 }
 .topbar-menu a {
-  color: #fff;
+  color: #ffffff !important;
   font-family: 'Space Grotesk', sans-serif;
   font-size: 15px;
   font-weight: 600;
