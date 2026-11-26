@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#050505"><meta name="description" content="Crea y descarga tus propios memes de ANOTOP AT."><title>ANOTOP AT | Meme Studio</title><link rel="stylesheet" href="style.css"></head>
+<body class="studio-page">
+<header class="topbar"><a class="buy-brand" href="index.html">ANOTOP AT</a><nav class="topbar-menu" aria-label="Menú principal"><a href="index.html">Inicio</a><a href="memes.html">Memes</a><a href="meme-studio.html" aria-current="page">Crear meme</a><a href="como-comprar.html">Token</a></nav></header>
+<main class="studio-main">
+<section class="studio-heading"><p class="section-kicker">ANOTOP CREATIVE LAB</p><h1>MEME<br><span>STUDIO.</span></h1><p>Sube una imagen, escribe tu frase y crea tu propio meme. Todo se procesa en tu navegador; la imagen no se sube a ningún servidor.</p></section>
+<div class="studio-layout">
+<section class="studio-controls">
+<label class="upload-control" for="imageInput">＋ SUBIR UNA IMAGEN<input id="imageInput" type="file" accept="image/*"></label>
+<label for="topText">TEXTO SUPERIOR</label><input id="topText" type="text" maxlength="90" placeholder="CUANDO..." value="CUANDO DICES ANOTOP">
+<label for="bottomText">TEXTO INFERIOR</label><input id="bottomText" type="text" maxlength="90" placeholder="...PERO...">
+<label for="textColor">COLOR DEL TEXTO</label><select id="textColor"><option value="#ffffff">Blanco</option><option value="#ffe08a">Dorado</option><option value="#ff3434">Rojo</option></select>
+<button id="downloadMeme" type="button">DESCARGAR MEME PNG ↓</button>
+<p class="studio-note">Consejo: utiliza imágenes propias o que tengas permiso para compartir.</p>
+</section>
+<section class="studio-preview"><div class="preview-label">VISTA PREVIA</div><canvas id="memeCanvas" width="900" height="900" aria-label="Vista previa del meme"></canvas><p id="studioStatus" role="status">Sube una imagen para empezar. También puedes crear sobre el fondo inicial.</p></section>
+</div></main>
+<footer class="site-footer"><a href="index.html">ANOTOP AT</a><span>CREA. COMPARTE. REPITE.</span><a href="memes.html">Volver a memes →</a></footer>
+<script src="meme-studio.js"></script></body></html>
