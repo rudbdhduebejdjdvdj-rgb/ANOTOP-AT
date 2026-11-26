@@ -210,26 +210,3 @@ body.buy-page { min-height:100vh; color:#f5f5f5; background:#050505; font-family
 .meme-callout h2{margin:10px 0 25px;font:700 clamp(35px,6vw,68px)/.9 'Space Grotesk',sans-serif;letter-spacing:-.07em}
 @media(max-width:700px){.universe-grid{grid-template-columns:1fr}.universe-card{min-height:180px}.home-universe,.home-faq{padding:70px 8vw}.site-footer{flex-direction:column;align-items:flex-start}.meme-callout{padding:30px 24px;margin-left:5%;margin-right:5%}}
 
-/* ANOTOP Meme Studio */
-body.studio-page{min-height:100vh;background:#050505;color:#fff;font-family:'Space Grotesk',sans-serif}
-.studio-page .topbar{display:flex;align-items:center;justify-content:space-between;padding:0 clamp(22px,6vw,90px);border-bottom:1px solid #ffffff18}
-.studio-page .topbar-menu{width:auto;gap:clamp(12px,2.5vw,30px);padding:0}
-.studio-page .topbar-menu a{font-size:12px}
-.studio-main{width:min(1160px,88vw);margin:auto}
-.studio-heading{padding:75px 0 45px;border-bottom:1px solid #ffffff20}
-.studio-heading h1{margin:20px 0;font:700 clamp(65px,11vw,120px)/.8 'Space Grotesk',sans-serif;letter-spacing:-.09em}
-.studio-heading h1 span{color:#d2ad62}
-.studio-heading>p:last-child{max-width:580px;color:#aaa;font-size:14px;line-height:1.8}
-.studio-layout{display:grid;grid-template-columns:320px 1fr;gap:45px;padding:45px 0 80px}
-.studio-controls{display:flex;flex-direction:column;gap:12px}
-.studio-controls label:not(.upload-control){margin-top:10px;color:#aaa;font-size:9px;font-weight:700;letter-spacing:.16em}
-.studio-controls input[type=text],.studio-controls select{width:100%;padding:13px;background:#151515;border:1px solid #333;color:#fff;font:13px 'Space Grotesk',sans-serif}
-.studio-controls input[type=file]{display:none}
-.upload-control,.studio-controls button{display:block;padding:15px;border:1px solid #d2ad62;background:#d2ad62;color:#080808;text-align:center;font:700 11px 'Space Grotesk',sans-serif;letter-spacing:.1em;cursor:pointer}
-.studio-controls button{margin-top:15px}
-.studio-note{color:#777;font-size:11px;line-height:1.6}
-.studio-preview{min-width:0}
-.preview-label{margin-bottom:12px;color:#888;font-size:9px;letter-spacing:.18em}
-.studio-preview canvas{display:block;width:100%;max-width:720px;aspect-ratio:1;background:#171717;border:1px solid #ffffff20}
-.studio-preview p{color:#888;font-size:11px}
-@media(max-width:760px){.studio-page .topbar{height:auto;min-height:70px;flex-wrap:wrap;gap:10px;padding:12px 6vw}.studio-page .topbar-menu{gap:12px}.studio-page .topbar-menu a{font-size:10px}.studio-layout{grid-template-columns:1fr;gap:30px}.studio-main{width:88vw}.studio-heading{padding-top:55px}}
