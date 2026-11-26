@@ -3,17 +3,42 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#000000">
+  <meta name="theme-color" content="#080808">
   <title>Memes | ANOTOP AT</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="page-empty">
+<body class="catalog-page">
   <header class="topbar">
     <nav class="topbar-menu" aria-label="Menú principal">
       <a href="index.html">Inicio</a>
-      <a href="memes.html">Memes</a>
+      <a href="memes.html" aria-current="page">Memes</a>
     </nav>
   </header>
-  <main aria-label="Memes"></main>
+  <main class="catalog">
+    <section class="catalog-feature">
+      <p class="catalog-kicker">ANOTOP ORIGINALS</p>
+      <h1>Tu universo de memes.</h1>
+      <p>Historias, personajes y momentos que no vas a encontrar en ningún otro sitio.</p>
+    </section>
+    <section class="shelf">
+      <h2>Volver a ver</h2>
+      <div class="poster-row">
+        <a class="poster poster-anotop" href="anotop-at.html" aria-label="Entrar en ANOTOP AT">
+          <span class="poster-tag">ANOTOP ORIGINAL</span>
+          <strong>ANOTOP<br>AT</strong>
+          <span class="poster-bottom">VOLVER A VER ▶</span>
+        </a>
+      </div>
+    </section>
+    <section class="shelf">
+      <h2>Películas para descubrir</h2>
+      <div class="poster-row">
+        <article class="poster poster-chaos"><span class="poster-tag">COMEDIA</span><strong>CAOS<br>EN EL CHAT</strong><span class="poster-bottom">UNA HISTORIA ÉPICA</span></article>
+        <article class="poster poster-frog"><span class="poster-tag">AVENTURA</span><strong>EL ÚLTIMO<br>FROG</strong><span class="poster-bottom">EL SALTO FINAL</span></article>
+        <article class="poster poster-monday"><span class="poster-tag">DRAMA</span><strong>LUNES<br>OTRA VEZ</strong><span class="poster-bottom">NADIE ESTABA PREPARADO</span></article>
+        <article class="poster poster-space"><span class="poster-tag">CIENCIA FICCIÓN</span><strong>MEME<br>GALAXY</strong><span class="poster-bottom">MÁS ALLÁ DEL FEED</span></article>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
