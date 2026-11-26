@@ -3,40 +3,62 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#080808">
-  <title>Memes | ANOTOP AT</title>
+  <meta name="theme-color" content="#050505">
+  <title>ANOTOP AT | Memes</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="catalog-page">
+<body class="catalog-page netflix-page">
   <header class="topbar">
+    <a class="brand" href="index.html">ANOTOP<span> AT</span></a>
     <nav class="topbar-menu" aria-label="Menú principal">
       <a href="index.html">Inicio</a>
       <a href="memes.html" aria-current="page">Memes</a>
     </nav>
   </header>
-  <main class="catalog">
-    <section class="catalog-feature">
-      <p class="catalog-kicker">ANOTOP ORIGINALS</p>
-      <h1>Tu universo de memes.</h1>
-      <p>Historias, personajes y momentos que no vas a encontrar en ningún otro sitio.</p>
-    </section>
-    <section class="shelf">
-      <h2>Volver a ver</h2>
-      <div class="poster-row">
-        <a class="poster poster-anotop" href="anotop-at.html" aria-label="Entrar en ANOTOP AT">
-          <span class="poster-tag">ANOTOP ORIGINAL</span>
-          <strong>ANOTOP<br>AT</strong>
-          <span class="poster-bottom">VOLVER A VER ▶</span>
-        </a>
+
+  <main class="streaming-home">
+    <section class="featured">
+      <!-- Sustituye images/featured.jpg por tu imagen principal cuando la tengas -->
+      <img class="featured-image" src="images/featured.jpg" alt="" onerror="this.style.display='none'">
+      <div class="featured-shade"></div>
+      <div class="featured-copy">
+        <p class="original-label">ORIGINAL DE ANOTOP</p>
+        <h1>ANOTOP AT</h1>
+        <div class="featured-meta">
+          <span class="stars">★★★★★</span>
+          <span>2026</span>
+          <span>1 temporada</span>
+          <span class="quality">ULTRA HD 4K</span>
+        </div>
+        <p class="featured-description">Un universo de memes, personajes y momentos inesperados. Esto no ha hecho más que empezar.</p>
+        <a class="play-link" href="anotop-at.html">▶ <span>Ver ahora</span></a>
       </div>
     </section>
-    <section class="shelf">
-      <h2>Películas para descubrir</h2>
-      <div class="poster-row">
-        <article class="poster poster-chaos"><span class="poster-tag">COMEDIA</span><strong>CAOS<br>EN EL CHAT</strong><span class="poster-bottom">UNA HISTORIA ÉPICA</span></article>
-        <article class="poster poster-frog"><span class="poster-tag">AVENTURA</span><strong>EL ÚLTIMO<br>FROG</strong><span class="poster-bottom">EL SALTO FINAL</span></article>
-        <article class="poster poster-monday"><span class="poster-tag">DRAMA</span><strong>LUNES<br>OTRA VEZ</strong><span class="poster-bottom">NADIE ESTABA PREPARADO</span></article>
-        <article class="poster poster-space"><span class="poster-tag">CIENCIA FICCIÓN</span><strong>MEME<br>GALAXY</strong><span class="poster-bottom">MÁS ALLÁ DEL FEED</span></article>
+
+    <section class="stream-row">
+      <h2>Populares en ANOTOP</h2>
+      <div class="thumbs">
+        <a class="thumb thumb-featured" href="anotop-at.html">
+          <img src="images/poster-anotop.jpg" alt="" onerror="this.style.display='none'">
+          <span class="image-placeholder">ANOTOP AT</span>
+        </a>
+        <div class="thumb"><img src="images/poster-2.jpg" alt="" onerror="this.style.display='none'"><span class="image-placeholder">IMAGEN 2</span></div>
+        <div class="thumb"><img src="images/poster-3.jpg" alt="" onerror="this.style.display='none'"><span class="image-placeholder">IMAGEN 3</span></div>
+        <div class="thumb"><img src="images/poster-4.jpg" alt="" onerror="this.style.display='none'"><span class="image-placeholder">IMAGEN 4</span></div>
+        <div class="thumb"><img src="images/poster-5.jpg" alt="" onerror="this.style.display='none'"><span class="image-placeholder">IMAGEN 5</span></div>
+        <div class="thumb"><img src="images/poster-6.jpg" alt="" onerror="this.style.display='none'"><span class="image-placeholder">IMAGEN 6</span></div>
+      </div>
+    </section>
+
+    <section class="stream-row">
+      <h2>Tendencias</h2>
+      <div class="thumbs">
+        <div class="thumb"><img src="images/trend-1.jpg" alt="" onerror="this.style.display='none'"><span class="image-placeholder">TENDENCIA 1</span></div>
+        <div class="thumb"><img src="images/trend-2.jpg" alt="" onerror="this.style.display='none'"><span class="image-placeholder">TENDENCIA 2</span></div>
+        <div class="thumb"><img src="images/trend-3.jpg" alt="" onerror="this.style.display='none'"><span class="image-placeholder">TENDENCIA 3</span></div>
+        <div class="thumb"><img src="images/trend-4.jpg" alt="" onerror="this.style.display='none'"><span class="image-placeholder">TENDENCIA 4</span></div>
+        <div class="thumb"><img src="images/trend-5.jpg" alt="" onerror="this.style.display='none'"><span class="image-placeholder">TENDENCIA 5</span></div>
+        <div class="thumb"><img src="images/trend-6.jpg" alt="" onerror="this.style.display='none'"><span class="image-placeholder">TENDENCIA 6</span></div>
       </div>
     </section>
   </main>
